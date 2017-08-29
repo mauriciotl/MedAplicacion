@@ -14,8 +14,7 @@ public class Medico extends Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private String cedula;
-
-   
+    
     
 // ===================================== 
 // = Constructor  = 
@@ -24,6 +23,7 @@ public class Medico extends Usuario implements Serializable {
     public Medico() {
     }
 
+    
     public Medico(String nombre, String email, String password, String cedula) {
         super(nombre, email, password);
         this.cedula = cedula;
@@ -42,7 +42,7 @@ public class Medico extends Usuario implements Serializable {
         this.cedula = cedula;
     }
 
-    
+
 
     
 }//Medico

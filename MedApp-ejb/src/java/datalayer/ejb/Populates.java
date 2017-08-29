@@ -57,6 +57,7 @@ public class Populates {
         
         
          //1. Se crean los usuarios necesarios
+        
          
         String nombre = "Omar",
                 email = "Omar@mail",
@@ -74,7 +75,6 @@ public class Populates {
                 email_3 = "Ana@mail",
                 password_3 = "Ana",
                 registro = "Ana-777";
-        
         Tecnico tecnico = new Tecnico(nombre_3, email_3, password_3, registro);
         
         String  nombre_4 = "martha",
@@ -83,9 +83,22 @@ public class Populates {
                 cedula = "asd23";
         Medico medico = new Medico(nombre_4, email_4, password_4, cedula);
         
+        String nombre_5 = "Gerardo",
+                email_5 = "Gerardo@mail",
+                password_5 = "Gerardo",
+                Tipo = "root";
+        Administrador administrador = new Administrador(nombre_5, email_5, password_5, Tipo);
+        
         
         //2. Se crea Expediente
         Expediente expediente = new Expediente("28-08-2017", paciente);
+        
+        
+        //2.1 Se crea Lista de Expediente y se asigna a Administrador
+        List<Expediente> expedientes = new ArrayList<>();
+        expedientes.add(expediente);
+        
+        administrador.setExpediente(expedientes);
         
         
         //3. Se crean ServLab 1..n y se agrega a expediente
@@ -135,12 +148,10 @@ public class Populates {
         estudioMed.setIsComplete(true);
         sl.setIsComplete(true);
         
-        
         //Se realiza la persistencia
         
-        
         System.out.println("Va ha realizar la persistencia del expediente");
-        em.persist(expediente);
+        em.persist(administrador);
         
         
         
